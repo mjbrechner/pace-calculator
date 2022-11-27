@@ -14,7 +14,7 @@ document.getElementById("number-input-area").addEventListener('input', (event) =
     }
 
     if (isNaN(currentPace)) {
-        document.getElementById("pace-results").innerText = `Add a number to calculate your pace for the year.`;
+        document.getElementById("pace-results").innerText = `Add a number to calculate your pace.`;
     } else {
         document.getElementById("pace-results").innerText = `You are on pace for ${currentPace} for the year.`;
     }

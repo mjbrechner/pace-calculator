@@ -1,21 +1,54 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFFBE9;
+    color: #58473a;
+    font-family: 'Roboto Slab', serif;
+}
+
+h1 {
+    font-weight: 700;
+    margin: 0em;
+    text-align: center;
+}
+
+main {
+    font-size: .9em;
+    padding: 0 15%;
+    margin: .5em 0;
+}
+
 #number-input-area {
     width: 3em;
     height: 1.3em;
     font-size: 1.5em;
+    padding: 0;
+    margin: 0;
     resize: none;
+}
+
+#pace-results {
+    padding: 0;
+    margin: 0;
 }
 
 .pace-area {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 1em;
 }
+
 footer {
     display: flex;
     flex-direction: column;
     align-items: center;
     font-size: .8em;
     margin-bottom: .25em;
+}
+
+a {
+    color: #58473a;
 }
 
 .profile-pic {
@@ -25,6 +58,13 @@ footer {
 
 /*tablet query*/
 @media only screen and (min-width: 768px) {
+    main {
+        font-size: 1em;
+    }
+
+    .pace-area {
+        flex-direction: row;
+    }
 
     footer {
         flex-direction: row;
@@ -40,6 +80,10 @@ footer {
 
 /*desktop query*/
 @media only screen and (min-width: 992px) {
+    main {
+        font-size: 1.1em;
+    }
+
     footer {
         font-size: 1em;
     }
