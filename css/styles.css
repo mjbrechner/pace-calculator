@@ -39,6 +39,17 @@ main {
     gap: 1em;
 }
 
+textarea {
+    outline: none !important;
+    border: 2px solid #58473a;
+    transition: .3s ease;
+    border-radius: 5px;
+}
+
+textarea:focus {
+    box-shadow: 0 0 10px #58473a;
+}
+
 footer {
     display: flex;
     flex-direction: column;
