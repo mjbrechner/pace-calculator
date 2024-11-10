@@ -5,4 +5,4 @@ Examines how much time has elapsed and remins in the year, while providing a too
 
 Viewable at https://mjbrechner.github.io/pace-calculator/
 
-© 2022 M.J. Brechner
+© 2022-2024 M.J. Brechner
