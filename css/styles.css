@@ -12,12 +12,19 @@ h1 {
     font-weight: 700;
     margin: 0em;
     text-align: center;
+    text-shadow: 0 0 10px #58473a;
 }
 
 main {
     font-size: 1em;
     padding: 0 3%;
     margin: .5em 0;
+}
+
+.pace-area {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
 }
 
 #number-input-area {
@@ -29,17 +36,6 @@ main {
     resize: none;
 }
 
-#pace-results {
-    padding: 0;
-    margin: 0;
-}
-
-.pace-area {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-}
-
 textarea {
     outline: none !important;
     border: 2px solid #58473a;
@@ -49,6 +45,11 @@ textarea {
 
 textarea:focus {
     box-shadow: 0 0 10px #58473a;
+}
+
+#pace-results {
+    padding: 0;
+    margin: 0;
 }
 
 footer {

@@ -11,7 +11,7 @@ const MonthName = monthNameList[today.getMonth()];
 const year = today.getFullYear();
 const formattedDate = `${MonthName} ${dayName}, ${year}`;
 
-// Leap year?
+// Calculates whether the current year is a leap year
 let leapYear;
 if ((year % 4 === 0) && (year % 100 !== 0)) {
     leapYear = true;
@@ -20,7 +20,6 @@ if ((year % 4 === 0) && (year % 100 !== 0)) {
 } else {
     leapYear = false;
 }
-console.log(`Is it a leap year? Survey says... ${Boolean(leapYear)}!`);
 
 // Calculate information based on the current date in relation to the rest of the year.
 
