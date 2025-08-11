@@ -31,10 +31,33 @@
         <div class="pace-area"> <textarea aria-label="text input box" id="number-input-area" maxlength="5"></textarea>
             <p id="pace-results"></p>
         </div>
+
+
+        <div class="baseball">
+            <h2>Baseball Season Pace Calculator</h2>
+            <div class="baseball-inner">
+                <p>Type in current stat:</p>
+                <div class="pace-area"> <textarea aria-label="text input box" id="stat-input-area"
+                        maxlength="10"></textarea></div>
+            </div>
+            <div class="baseball-inner">
+                <p>Number of team games completed:</p>
+                <div class="pace-area"> <textarea aria-label="text input box" id="games-input-area"
+                        maxlength="10"></textarea></div>
+            </div>
+            <div class="baseball-inner">
+                <!-- <button onclick="baseballCalculate()">calculate</button> -->
+                <p id="baseball-results"></p>
+            </div>
+
+
+        </div>
     </main>
     <footer>
         <p>
-            <script>document.write(`Copyright © 2022-${new Date().getFullYear()} `);</script>
+            <script>
+                document.write(`Copyright © 2022-${new Date().getFullYear()} `);
+            </script>
             <a href="https://github.com/mjbrechner">M.J. Brechner</a>
         </p>
         <!-- Profile picture/favicon created by M.J. Brechner © 2022 -->
@@ -44,6 +67,7 @@
     </footer>
     <script src="javascript/date.js" defer></script>
     <script src="javascript/pace.js" defer></script>
+    <script src="javascript/baseball.js" defer></script>
     <script src="javascript/index.js" defer></script>
 </body>
 
