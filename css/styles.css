@@ -36,7 +36,6 @@ main {
     resize: none;
 }
 
-
 textarea {
     outline: none !important;
     border: 2px solid #58473a;
@@ -79,15 +78,21 @@ button {
     cursor: pointer;
 }
 
+.or-area {
+    padding: 0;
+    margin: 0;
+}
+
 #stat-input-area,
-#games-input-area {
-    width: 6em;
+#games-input-area, #wins-input-area, #losses-input-area {
+    width: 90px;
     height: 1.3em;
     font-size: 1.5em;
     padding: 0;
     margin: 0;
     resize: none;
 }
+
 
 footer {
     display: flex;
