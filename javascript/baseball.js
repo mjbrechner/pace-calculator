@@ -69,6 +69,7 @@ function baseballCalculate() {
     } else {
         // Nothing useful has been entered into Games Played, so whatever has been added to Wins + Losses is used instead.
         inputtedGamesPlayed = inputtedGamesWonAndLost;
+        gamesArea.placeholder = inputtedGamesPlayed;
     }
 
 
