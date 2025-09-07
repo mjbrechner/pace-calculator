@@ -6,6 +6,7 @@ let inputtedGamesWon;
 let inputtedGamesLost;
 let inputtedGamesWonAndLost;
 let currentSeasonPace;
+let remainingGames;
 
 const statArea = document.getElementById("stat-input-area");
 const gamesArea = document.getElementById("games-input-area");
@@ -66,21 +67,32 @@ function baseballCalculate() {
     // Choose value for Games Played depending on whether the user enters a total number or Wins + Losses    
     if (inputtedGamesPlayed > 0) {
         // A positive number has been entered into Games Played, so that number should supersede anything in the Wins and Losses sections
+        remainingGames = 162 - inputtedGamesPlayed;
     } else {
         // Nothing useful has been entered into Games Played, so whatever has been added to Wins + Losses is used instead.
         inputtedGamesPlayed = inputtedGamesWonAndLost;
+        remainingGames = 162 - inputtedGamesPlayed;
         gamesArea.placeholder = inputtedGamesPlayed;
     }
 
-
     currentSeasonPace = ((inputtedStat / inputtedGamesPlayed) * 162).toFixed(3);
 
-console.log("THE PACE IS: " + currentSeasonPace);
-    if (isNaN(currentSeasonPace)||(currentSeasonPace > 1000000000)) { // Since using "=== Infinity" doesn't work in strict mode, requiring more than a billion is sufficient for the purposes of pace numbers for a baseball season.
+    if (isNaN(currentSeasonPace) || (currentSeasonPace > 1000000000)) { // Since using "=== Infinity" doesn't work in strict mode, requiring more than a billion is sufficient for the purposes of pace numbers for a baseball season.
         document.getElementById("baseball-results").innerText = ` `;
     } else {
-        document.getElementById("baseball-results").innerText = `Pace is ${currentSeasonPace} for the season.`;
+        console.log("REMAIMING GAMES IS " + remainingGames);
+
+        if (remainingGames > 1) {
+            document.getElementById("baseball-results").innerText = `Pace is ${currentSeasonPace} for the season. There are ${remainingGames} games left in the season.`;
+        } else if (remainingGames === 1) {
+            document.getElementById("baseball-results").innerText = `Pace is ${currentSeasonPace} for the season. There is ${remainingGames} game left in the season.`;
+        } else if (remainingGames === 0) {
+            document.getElementById("baseball-results").innerText = `Pace is ${currentSeasonPace}, with no more games remaining in a 162-game MLB season.`;
+        } else {
+            document.getElementById("baseball-results").innerText = `Games played exceeds a standard MLB season. Pace would be ${currentSeasonPace} over 162 games.`;
+        }
+
     }
-    console.log(`Calculation says the stat is ${inputtedStat} and the Games Played is ${inputtedGamesPlayed}, so the pace is ${currentSeasonPace}.`);
+    // console.log(`Calculation says the stat is ${inputtedStat} and the Games Played is ${inputtedGamesPlayed}, so the pace is ${currentSeasonPace}.`);
 
 };
