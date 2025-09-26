@@ -13,6 +13,9 @@ const gamesArea = document.getElementById("games-input-area");
 const winsArea = document.getElementById("wins-input-area");
 const lossesArea = document.getElementById("losses-input-area");
 
+const baseballButton = document.getElementById("baseball-button");
+const baseballSection = document.getElementById("baseball");
+
 
 statArea.addEventListener('input', (event) => {
     baseballCalculate();
@@ -96,3 +99,13 @@ function baseballCalculate() {
     // console.log(`Calculation says the stat is ${inputtedStat} and the Games Played is ${inputtedGamesPlayed}, so the pace is ${currentSeasonPace}.`);
 
 };
+
+function baseballToggleOn() {
+    baseballButton.style.visibility = "hidden";
+    baseballSection.style.display = "flex";
+}
+
+function baseballToggleOff() {
+    baseballButton.style.visibility = "visible";
+    baseballSection.style.display = "none";
+}

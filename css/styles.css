@@ -7,6 +7,15 @@ body {
     font-family: 'Roboto Slab', serif;
 }
 
+#baseball-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: fit-content;
+    height: fit-content;
+    padding: 3px;
+}
+
 h1 {
     font-size: 2em;
     font-weight: 700;
@@ -60,14 +69,27 @@ h2 {
     text-align: center;
     text-shadow: 0 0 5px #58473a;
 }
-.baseball {
-    display: flex;
+
+#baseball {
+    display: none;
     flex-direction: column;
     gap: 0;
     padding: 3px;
     margin: 5px;
     border: solid 1px #58473a;
     border-radius: 5px;
+}
+
+.baseball-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#x-out {
+    padding: 1px 1px 0 0;
+    margin: 1px 1px 0 0;
+    cursor: pointer;
 }
 
 .baseball-inner {
@@ -96,7 +118,9 @@ button {
 }
 
 #stat-input-area,
-#games-input-area, #wins-input-area, #losses-input-area {
+#games-input-area,
+#wins-input-area,
+#losses-input-area {
     width: 90px;
     height: 1.3em;
     font-size: 1.5em;

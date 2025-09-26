@@ -20,6 +20,7 @@
 <body>
     <header>
         <h1>Pace Calculator</h1>
+        <button id="baseball-button" onclick="baseballToggleOn()">baseball pace calculator</button>
     </header>
     <main>
         <p id="current-date"></p>
@@ -32,9 +33,11 @@
             <p id="pace-results"></p>
         </div>
 
-
-        <div class="baseball">
-            <h2>Baseball Season Pace Calculator</h2>
+        <div id="baseball">
+            <div class="baseball-title">
+                <h2>Baseball Season Pace Calculator</h2>
+                <div id="x-out" onclick="baseballToggleOff()">x</div>
+            </div>
             <div class="baseball-inner">
                 <p>Type in current stat:</p>
                 <div class="pace-area"> <textarea aria-label="text input box" id="stat-input-area"
