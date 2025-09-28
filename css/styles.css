@@ -76,19 +76,26 @@ h2 {
     gap: 0;
     padding: 3px;
     margin: 5px;
-    border: solid 1px #58473a;
+    border: solid 2px #58473a;
     border-radius: 5px;
 }
 
-.baseball-title {
+/* .baseball-title {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-}
+} */
 
 #x-out {
-    padding: 1px 1px 0 0;
-    margin: 1px 1px 0 0;
+    position: relative;
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    width: fit-content;
+    height: fit-content;
+    margin: 0px 5px 0 0;
     cursor: pointer;
 }
 
