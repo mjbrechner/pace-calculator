@@ -80,12 +80,6 @@ h2 {
     border-radius: 5px;
 }
 
-/* .baseball-title {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-} */
-
 #x-out {
     position: relative;
     float: right;

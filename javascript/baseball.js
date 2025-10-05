@@ -17,6 +17,26 @@ const baseballButton = document.getElementById("baseball-button");
 const baseballSection = document.getElementById("baseball");
 
 
+// Get current baseballToggler information from localStorage upon page load.
+
+let baseballToggler = localStorage.getItem("baseballToggler");
+console.log("baseballToggler is set at " + baseballToggler + " upon load.")
+
+function baseballTogglerLoader() {
+    if (baseballToggler === "on") {
+        baseballButton.style.visibility = "hidden";
+        baseballSection.style.display = "flex";
+        baseballToggler = "on";
+        localStorage.setItem("baseballToggler", "on");
+    } else { //This works f baseballToggler is set to "off" OR if the user simply has not baseballToggler information in localStorage.
+        baseballButton.style.visibility = "visible";
+        baseballSection.style.display = "none";
+        baseballToggler = "off";
+        localStorage.setItem("baseballToggler", "off");
+    }
+}
+baseballTogglerLoader();
+
 statArea.addEventListener('input', (event) => {
     baseballCalculate();
 });
@@ -103,9 +123,15 @@ function baseballCalculate() {
 function baseballToggleOn() {
     baseballButton.style.visibility = "hidden";
     baseballSection.style.display = "flex";
+    baseballToggler = "on";
+    localStorage.setItem("baseballToggler", "on");
 }
 
 function baseballToggleOff() {
     baseballButton.style.visibility = "visible";
     baseballSection.style.display = "none";
+    baseballToggler = "off";
+    localStorage.setItem("baseballToggler", "off");
 }
+
+
