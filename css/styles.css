@@ -62,7 +62,6 @@ textarea:focus {
     margin: 0;
 }
 
-
 h2 {
     font-size: 1.5em;
     font-weight: 700;
@@ -150,6 +149,10 @@ a {
 
 /*tablet query*/
 @media only screen and (min-width: 768px) {
+
+    #baseball {
+        margin-top: 25px;
+    }
 
     #baseball-button {
         font-size: 12px;
