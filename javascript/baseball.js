@@ -16,9 +16,7 @@ const lossesArea = document.getElementById("losses-input-area");
 const baseballButton = document.getElementById("baseball-button");
 const baseballSection = document.getElementById("baseball");
 
-
 // Get current baseballToggler information from localStorage upon page load.
-
 let baseballToggler = localStorage.getItem("baseballToggler");
 console.log("baseballToggler is set at " + baseballToggler + " upon load.")
 
@@ -42,14 +40,18 @@ statArea.addEventListener('input', (event) => {
 });
 
 gamesArea.addEventListener('input', (event) => {
+    winsArea.value = "";
+    lossesArea.value = "";
     baseballCalculate();
 });
 
 winsArea.addEventListener('input', (event) => {
+    gamesArea.value = "";
     baseballCalculate();
 });
 
 lossesArea.addEventListener('input', (event) => {
+    gamesArea.value = "";
     baseballCalculate();
 });
 
@@ -66,7 +68,6 @@ function baseballCalculate() {
     inputtedGamesLost = lossesArea.value;
 
     // Clean up numbers
-
     inputtedGamesPlayed = inputtedGamesPlayed.replace(/,/g, `.`);
     inputtedGamesPlayed = parseFloat(inputtedGamesPlayed).toFixed(0);
 
@@ -103,7 +104,7 @@ function baseballCalculate() {
     if (isNaN(currentSeasonPace) || (currentSeasonPace > 1000000000)) { // Since using "=== Infinity" doesn't work in strict mode, requiring more than a billion is sufficient for the purposes of pace numbers for a baseball season.
         document.getElementById("baseball-results").innerText = ` `;
     } else {
-        console.log("REMAIMING GAMES IS " + remainingGames);
+        console.log("remainingGames set at " + remainingGames);
 
         if (remainingGames > 1) {
             document.getElementById("baseball-results").innerText = `Pace is ${currentSeasonPace} for the season. There are ${remainingGames} games left in the season.`;
@@ -114,10 +115,7 @@ function baseballCalculate() {
         } else {
             document.getElementById("baseball-results").innerText = `Games played exceeds a standard MLB season. Pace would be ${currentSeasonPace} over 162 games.`;
         }
-
     }
-    // console.log(`Calculation says the stat is ${inputtedStat} and the Games Played is ${inputtedGamesPlayed}, so the pace is ${currentSeasonPace}.`);
-
 };
 
 function baseballToggleOn() {
@@ -133,5 +131,3 @@ function baseballToggleOff() {
     baseballToggler = "off";
     localStorage.setItem("baseballToggler", "off");
 }
-
-
